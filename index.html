@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bella’s Hairline | Hair That Speaks</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#9E1B1B;
+  --cream:#FDFBF7;
+  --black:#1A1A1A;
+  --soft:#f5eee8;
+  --line:rgba(26,26,26,.13);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--cream);
+  color:var(--black);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+
+button,a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  mix-blend-mode:multiply;
+}
+
+.logo{
+  width:62px;
+  height:62px;
+  object-fit:contain;
+}
+
+.nav{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.nav a{
+  transition:.25s;
+}
+
+.nav a:hover{
+  color:var(--red);
+}
+
+.nav-cta{
+  background:var(--black);
+  color:white;
+  padding:12px 18px;
+  border-radius:100px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:100svh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  padding:130px 5% 60px;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(253,251,247,.97) 0%,
+      rgba(253,251,247,.78) 35%,
+      rgba(253,251,247,.12) 72%,
+      rgba(253,251,247,.02) 100%
+    ),
+    url("assets/aesthetics_background-02.webp") center/cover no-repeat;
+  transform:scale(1.02);
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(253,251,247,.45),
+      transparent 35%,
+      rgba(26,26,26,.08)
+    );
+  pointer-events:none;
+}
+
+.hero-content{
+  max-width:760px;
+  position:relative;
+  z-index:2;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:.25em;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:22px;
+}
+
+.eyebrow span{
+  width:38px;
+  height:1px;
+  background:var(--red);
+}
+
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(72px,12vw,155px);
+  font-weight:500;
+  line-height:.77;
+  letter-spacing:-.055em;
+  max-width:850px;
+}
+
+.hero h1 em{
+  color:var(--red);
+  font-family:"Playfair Display",serif;
+  font-size:.58em;
+  font-weight:500;
+  letter-spacing:-.04em;
+}
+
+.hero-text{
+  margin-top:32px;
+  max-width:430px;
+  font-size:14px;
+  line-height:1.8;
+  color:#4d4642;
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:0 25px;
+  border-radius:100px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  transition:.3s ease;
+}
+
+.btn-primary{
+  background:var(--red);
+  color:white;
+  box-shadow:0 14px 35px rgba(158,27,27,.2);
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(158,27,27,.3);
+}
+
+.btn-outline{
+  border:1px solid rgba(26,26,26,.35);
+  background:rgba(253,251,247,.45);
+  backdrop-filter:blur(10px);
+}
+
+.btn-outline:hover{
+  background:var(--black);
+  color:white;
+}
+
+.hero-mark{
+  position:absolute;
+  right:5%;
+  bottom:55px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:13px;
+  writing-mode:vertical-rl;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  opacity:.65;
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+  padding:110px 5%;
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:80px;
+  align-items:start;
+}
+
+.section-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--red);
+}
+
+.intro h2{
+  margin-top:15px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(45px,6vw,78px);
+  font-weight:500;
+  line-height:.92;
+  letter-spacing:-.04em;
+}
+
+.intro-copy{
+  max-width:590px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(25px,3vw,39px);
+  line-height:1.15;
+}
+
+.intro-copy strong{
+  color:var(--red);
+  font-weight:600;
+}
+
+/* ================= COLLECTION ================= */
+
+.collection{
+  padding:30px 5% 110px;
+}
+
+.collection-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  border-bottom:1px solid var(--line);
+  padding-bottom:25px;
+  margin-bottom:35px;
+}
+
+.collection-title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(50px,7vw,90px);
+  font-weight:500;
+  line-height:.85;
+  letter-spacing:-.05em;
+}
+
+.collection-note{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  opacity:.55;
+}
+
+/* ================= PRODUCT GRID ================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  background:#eee7e1;
+  cursor:pointer;
+  aspect-ratio:4/5;
+}
+
+.card:nth-child(2),
+.card:nth-child(5),
+.card:nth-child(8),
+.card:nth-child(11){
+  margin-top:55px;
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    transparent 50%,
+    rgba(0,0,0,.58)
+  );
+  opacity:.8;
+}
+
+.card:hover img{
+  transform:scale(1.06);
+}
+
+.card-info{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  z-index:2;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+}
+
+.card-name{
+  font-family:"Cormorant Garamond",serif;
+  font-size:28px;
+  line-height:1;
+}
+
+.card-number{
+  font-size:10px;
+  letter-spacing:.18em;
+  opacity:.8;
+}
+
+/* ================= STATEMENT ================= */
+
+.statement{
+  background:var(--black);
+  color:var(--cream);
+  padding:120px 5%;
+  text-align:center;
+}
+
+.statement-small{
+  color:#d49a9a;
+  text-transform:uppercase;
+  letter-spacing:.25em;
+  font-size:10px;
+  font-weight:700;
+}
+
+.statement h2{
+  max-width:950px;
+  margin:25px auto 0;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(50px,8vw,110px);
+  line-height:.88;
+  font-weight:500;
+  letter-spacing:-.055em;
+}
+
+.statement h2 em{
+  color:#d66a6a;
+  font-family:"Playfair Display",serif;
+  font-size:.75em;
+}
+
+.statement p{
+  max-width:500px;
+  margin:30px auto 0;
+  color:#bdb7b3;
+  line-height:1.8;
+  font-size:13px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+  padding:110px 5%;
+  text-align:center;
+  background:var(--cream);
+}
+
+.cta h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(55px,9vw,120px);
+  font-weight:500;
+  line-height:.8;
+  letter-spacing:-.06em;
+}
+
+.cta h2 span{
+  color:var(--red);
+  font-family:"Playfair Display",serif;
+  font-style:italic;
+}
+
+.cta p{
+  margin:28px auto;
+  max-width:420px;
+  font-size:13px;
+  line-height:1.7;
+  color:#625957;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#eee8e1;
+  padding:30px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+
+footer strong{
+  color:var(--red);
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  background:rgba(20,15,15,.72);
+  backdrop-filter:blur(18px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(900px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:var(--cream);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+}
+
+.modal-image{
+  min-height:500px;
+  background:#eee;
+}
+
+.modal-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.modal-info{
+  padding:55px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.modal-label{
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-size:10px;
+  font-weight:700;
+}
+
+.modal-info h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:58px;
+  line-height:.9;
+  font-weight:500;
+  margin:15px 0 20px;
+}
+
+.modal-info p{
+  color:#655c58;
+  line-height:1.8;
+  font-size:13px;
+  margin-bottom:25px;
+}
+
+.close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:50%;
+  background:rgba(253,251,247,.9);
+  font-size:20px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.modal-nav{
+  display:flex;
+  gap:8px;
+  margin-bottom:20px;
+  overflow-x:auto;
+}
+
+.thumb{
+  width:58px;
+  height:68px;
+  flex:none;
+  object-fit:cover;
+  opacity:.5;
+  cursor:pointer;
+  border:1px solid transparent;
+}
+
+.thumb.active{
+  opacity:1;
+  border-color:var(--red);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+  header{
+    padding:13px 5%;
+  }
+
+  .logo{
+    width:50px;
+    height:50px;
+  }
+
+  .nav{
+    gap:8px;
+  }
+
+  .nav a:not(.nav-cta){
+    display:none;
+  }
+
+  .nav-cta{
+    padding:10px 15px;
+    font-size:10px;
+  }
+
+  .hero{
+    min-height:100svh;
+    padding:120px 6% 45px;
+    align-items:flex-end;
+  }
+
+  .hero-bg{
+    background:
+      linear-gradient(
+        0deg,
+        rgba(253,251,247,.98) 0%,
+        rgba(253,251,247,.73) 50%,
+        rgba(253,251,247,.15) 100%
+      ),
+      url("assets/aesthetics_background-02.webp") center/cover no-repeat;
+  }
+
+  .hero h1{
+    font-size:clamp(67px,20vw,110px);
+  }
+
+  .hero-text{
+    font-size:13px;
+    margin-top:24px;
+  }
+
+  .hero-mark{
+    display:none;
+  }
+
+  .intro{
+    padding:80px 6%;
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .intro-copy{
+    font-size:29px;
+  }
+
+  .collection{
+    padding:20px 6% 80px;
+  }
+
+  .collection-top{
+    align-items:flex-start;
+    gap:20px;
+    flex-direction:column;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+  }
+
+  .card{
+    aspect-ratio:3/4;
+  }
+
+  .card:nth-child(2),
+  .card:nth-child(5),
+  .card:nth-child(8),
+  .card:nth-child(11){
+    margin-top:30px;
+  }
+
+  .card-info{
+    left:12px;
+    right:12px;
+    bottom:12px;
+  }
+
+  .card-name{
+    font-size:21px;
+  }
+
+  .statement{
+    padding:85px 6%;
+  }
+
+  .cta{
+    padding:85px 6%;
+  }
+
+  footer{
+    padding:25px 6%;
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .modal{
+    padding:10px;
+  }
+
+  .modal-box{
+    grid-template-columns:1fr;
+    max-height:95vh;
+  }
+
+  .modal-image{
+    height:55vh;
+    min-height:0;
+  }
+
+  .modal-info{
+    padding:30px 25px 35px;
+  }
+
+  .modal-info h3{
+    font-size:45px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#top">
+    <img class="logo" src="assets/logo.webp" alt="Bella’s Hairline">
+  </a>
+
+  <nav class="nav">
+    <a href="#collection">Collection</a>
+    <a href="#about">About</a>
+    <a class="nav-cta" href="https://wa.me/2349161309136?text=Hello%20Bella%E2%80%99s%20Hairline%2C%20I%E2%80%99d%20like%20to%20make%20an%20inquiry.">
+      WhatsApp
+    </a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        <span></span>
+        Bella’s Hairline
+      </div>
+
+      <h1>
+        Hair<br>
+        made <em>beautiful.</em>
+      </h1>
+
+      <p class="hero-text">
+        Discover beautiful hair pieces selected to elevate your look,
+        complement your style, and make every entrance unforgettable.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#collection" class="btn btn-primary">
+          Explore Collection
+        </a>
+
+        <a href="https://wa.me/2349161309136?text=Hello%20Bella%E2%80%99s%20Hairline%2C%20I%E2%80%99d%20like%20to%20make%20an%20inquiry."
+           class="btn btn-outline">
+          Shop via WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-mark">
+      Elegance · Confidence · You
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+  <section class="intro" id="about">
+
+    <div>
+      <div class="section-label">01 / The Brand</div>
+
+      <h2>
+        Your hair.<br>
+        Your statement.
+      </h2>
+    </div>
+
+    <div class="intro-copy">
+      We believe the right hair does more than complete a look.
+      It changes the way you <strong>feel.</strong>
+    </div>
+
+  </section>
+
+
+  <!-- COLLECTION -->
+  <section class="collection" id="collection">
+
+    <div class="collection-top">
+      <div>
+        <div class="section-label">02 / Collection</div>
+        <div class="collection-title">The Edit</div>
+      </div>
+
+      <div class="collection-note">
+        Browse the collection · Tap to enquire
+      </div>
+    </div>
+
+
+    <div class="grid">
+
+      <article class="card" onclick="openProduct(1)">
+        <img src="assets/hair-01.jpg" alt="Bella’s Hairline Hair 01">
+        <div class="card-info">
+          <div class="card-name">The First</div>
+          <div class="card-number">01</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(2)">
+        <img src="assets/hair-02.jpg" alt="Bella’s Hairline Hair 02">
+        <div class="card-info">
+          <div class="card-name">The Muse</div>
+          <div class="card-number">02</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(3)">
+        <img src="assets/hair-03.jpg" alt="Bella’s Hairline Hair 03">
+        <div class="card-info">
+          <div class="card-name">The Belle</div>
+          <div class="card-number">03</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(4)">
+        <img src="assets/hair-04.jpg" alt="Bella’s Hairline Hair 04">
+        <div class="card-info">
+          <div class="card-name">The Classic</div>
+          <div class="card-number">04</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(5)">
+        <img src="assets/hair-05.jpg" alt="Bella’s Hairline Hair 05">
+        <div class="card-info">
+          <div class="card-name">The Grace</div>
+          <div class="card-number">05</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(6)">
+        <img src="assets/hair-06.jpg" alt="Bella’s Hairline Hair 06">
+        <div class="card-info">
+          <div class="card-name">The Icon</div>
+          <div class="card-number">06</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(7)">
+        <img src="assets/hair-07.jpg" alt="Bella’s Hairline Hair 07">
+        <div class="card-info">
+          <div class="card-name">The Muse II</div>
+          <div class="card-number">07</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(8)">
+        <img src="assets/hair-08.jpg" alt="Bella’s Hairline Hair 08">
+        <div class="card-info">
+          <div class="card-name">The Luxe</div>
+          <div class="card-number">08</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(9)">
+        <img src="assets/hair-09.jpg" alt="Bella’s Hairline Hair 09">
+        <div class="card-info">
+          <div class="card-name">The Darling</div>
+          <div class="card-number">09</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(10)">
+        <img src="assets/hair-10.jpg" alt="Bella’s Hairline Hair 10">
+        <div class="card-info">
+          <div class="card-name">The Royal</div>
+          <div class="card-number">10</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(11)">
+        <img src="assets/hair-11.jpg" alt="Bella’s Hairline Hair 11">
+        <div class="card-info">
+          <div class="card-name">The Femme</div>
+          <div class="card-number">11</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="openProduct(12)">
+        <img src="assets/hair-12.jpg" alt="Bella’s Hairline Hair 12">
+        <div class="card-info">
+          <div class="card-name">The Signature</div>
+          <div class="card-number">12</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- STATEMENT -->
+  <section class="statement">
+
+    <div class="statement-small">
+      03 / Bella’s Philosophy
+    </div>
+
+    <h2>
+      Wear it like<br>
+      <em>you mean it.</em>
+    </h2>
+
+    <p>
+      Hair is more than an accessory. It is part of the presence
+      you carry into every room.
+    </p>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <div class="section-label">04 / Your Next Look</div>
+
+    <h2>
+      Find your<br>
+      <span>signature.</span>
+    </h2>
+
+    <p>
+      Tell us which style caught your eye and we’ll help you
+      find the perfect option.
+    </p>
+
+    <a class="btn btn-primary"
+       href="https://wa.me/2349161309136?text=Hello%20Bella%E2%80%99s%20Hairline%2C%20I%20found%20a%20hair%20style%20I%E2%80%99m%20interested%20in.%20I%E2%80%99d%20like%20to%20know%20the%20price%20and%20availability.">
+      Chat on WhatsApp
+    </a>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div>
+    <strong>Bella’s Hairline</strong>
+  </div>
+
+  <div>
+    Hair · Beauty · Confidence
+  </div>
+
+  <div>
+    © 2026 Bella’s Hairline
+  </div>
+</footer>
+
+
+<!-- PRODUCT MODAL -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeProduct()">×</button>
+
+    <div class="modal-image">
+      <img id="modalImage" src="" alt="">
+    </div>
+
+    <div class="modal-info">
+
+      <div class="modal-label">
+        Bella’s Hairline
+      </div>
+
+      <h3 id="modalTitle">
+        The First
+      </h3>
+
+      <p>
+        Interested in this style? Send us a message on WhatsApp
+        for price, availability, details and ordering.
+      </p>
+
+      <div class="modal-nav" id="thumbs"></div>
+
+      <a id="modalWhatsApp"
+         class="btn btn-primary"
+         href="#"
+         target="_blank">
+        Enquire on WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const phone = "2349161309136";
+
+const products = [
+  {name:"The First",images:["hair-01.jpg"]},
+  {name:"The Muse",images:["hair-02.jpg"]},
+  {name:"The Belle",images:["hair-03.jpg"]},
+  {name:"The Classic",images:["hair-04.jpg"]},
+  {name:"The Grace",images:["hair-05.jpg"]},
+  {name:"The Icon",images:["hair-06.jpg"]},
+  {name:"The Muse II",images:["hair-07.jpg"]},
+  {name:"The Luxe",images:["hair-08.jpg"]},
+  {name:"The Darling",images:["hair-09.jpg"]},
+  {name:"The Royal",images:["hair-10.jpg"]},
+  {name:"The Femme",images:["hair-11.jpg"]},
+  {name:"The Signature",images:["hair-12.jpg"]}
+];
+
+let currentProduct = 0;
+
+function openProduct(number){
+
+  currentProduct = number - 1;
+
+  const product = products[currentProduct];
+
+  document.getElementById("modalTitle").textContent = product.name;
+
+  const image = document.getElementById("modalImage");
+
+  image.src = "assets/" + product.images[0];
+  image.alt = product.name;
+
+  const thumbs = document.getElementById("thumbs");
+
+  thumbs.innerHTML = "";
+
+  product.images.forEach((img,index)=>{
+
+    const thumb = document.createElement("img");
+
+    thumb.src = "assets/" + img;
+    thumb.className = "thumb" + (index === 0 ? " active" : "");
+
+    thumb.onclick = ()=>{
+      image.src = "assets/" + img;
+
+      document.querySelectorAll(".thumb")
+        .forEach(x=>x.classList.remove("active"));
+
+      thumb.classList.add("active");
+    };
+
+    thumbs.appendChild(thumb);
+
+  });
+
+  const message =
+  `Hello Bella's Hairline, I'm interested in "${product.name}". I'd like to know the price and availability.`;
+
+document.getElementById("modalWhatsApp").href =
+  "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+document.getElementById("modal").classList.add("show");
+
+document.body.style.overflow = "hidden";
+}
+
+function closeProduct(){
+
+document.getElementById("modal").classList.remove("show");
+
+document.body.style.overflow = "";
+}
+
+document.getElementById("modal").addEventListener("click", function(e){
+
+if(e.target === this){
+  closeProduct();
+}
+
+});
+
+document.addEventListener("keydown", function(e){
+
+if(e.key === "Escape"){
+  closeProduct();
+}
+
+});
+
+</script>
+
+</body>
+</html>
